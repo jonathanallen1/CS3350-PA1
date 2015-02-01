@@ -13,14 +13,43 @@ namespace FoundationsProject1
 {
     public partial class Form1 : Form
     {
+        private ComboBox[] selectors;
+        private char[] uppers = new char[] 
+        {
+            'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
+            'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
+        };
+        private char[] lowers = new char[] 
+        {
+            'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+            'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
+        };
+
         public Form1()
         {
             InitializeComponent();
-        }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
+            // initialize the file selection dialog boxes
+            openFileDialog1.Multiselect = false;
+            openFileDialog1.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
 
+            this.selectors = new ComboBox[] 
+            {
+                this.comboBoxA, this.comboBoxB, this.comboBoxC, this.comboBoxD, this.comboBoxE,
+                this.comboBoxF, this.comboBoxG, this.comboBoxH, this.comboBoxI, this.comboBoxJ,
+                this.comboBoxK, this.comboBoxL, this.comboBoxM, this.comboBoxN, this.comboBoxO,
+                this.comboBoxP, this.comboBoxQ, this.comboBoxR, this.comboBoxS, this.comboBoxT,
+                this.comboBoxU, this.comboBoxV, this.comboBoxW, this.comboBoxX, this.comboBoxY,
+                this.comboBoxZ
+            };
+
+            foreach (ComboBox box in selectors)
+            {
+                foreach (char letter in lowers)
+                {
+                    box.Items.Add(letter);
+                }
+            }
         }
 
         private void generate_Click(object sender, EventArgs e)
@@ -34,8 +63,8 @@ namespace FoundationsProject1
             //get the data from the input fields
             //NOTE: THESE NEED TO CHANGE TO MATCH YOUR SETUP 
             //      IF YOU WANT TO TEST THIS
-            string cipherPath = "C:\\Users\\Seecs\\Documents\\Visual Studio 2013\\Projects\\FoundationsProject1\\cipher.txt";
-            string plainText = "C:\\Users\\Seecs\\Documents\\Visual Studio 2013\\Projects\\FoundationsProject1\\plaintext.txt";
+            string cipherPath = "C:\\Users\\Jonathan\\SkyDrive\\8 Spring 2014\\Foundations of Computer Security\\CS3350-PA1\\cipher.txt";
+            string plainText = "C:\\Users\\Jonathan\\SkyDrive\\8 Spring 2014\\Foundations of Computer Security\\CS3350-PA1\\plaintext.txt";
             //Get the characters from the file
             string contentOfCipher = File.ReadAllText(cipherPath);
             string contentOfText = File.ReadAllText(plainText);
@@ -133,6 +162,32 @@ namespace FoundationsProject1
                     fs.Write(toWrite, 0, toWrite.Length);
                     fs.Close();
                 }
+            }
+        }
+
+        // Exit the program using the exit option in the file menu
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            calibrateStats();
+        }
+
+        private void calibrateStatisticsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.calibrateStats();
+        }
+
+        private void calibrateStats()
+        {
+            DialogResult result = this.openFileDialog1.ShowDialog();
+            
+            if (result == DialogResult.OK)
+            {
+                textBox1.Text = openFileDialog1.FileName;
             }
         }
     }
