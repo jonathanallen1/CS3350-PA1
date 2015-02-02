@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.generate_guess = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.button2 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.comboBoxA = new System.Windows.Forms.ComboBox();
             this.comboBoxB = new System.Windows.Forms.ComboBox();
@@ -100,8 +101,8 @@
             this.loadCiphertextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button2 = new System.Windows.Forms.Button();
+            this.saveDecipheredAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -130,15 +131,25 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoSize = true;
-            this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.SteelBlue;
             this.flowLayoutPanel1.Controls.Add(this.button2);
             this.flowLayoutPanel1.Controls.Add(this.generate_guess);
             this.flowLayoutPanel1.Controls.Add(this.tableLayoutPanel1);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 24);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(632, 75);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1046, 75);
             this.flowLayoutPanel1.TabIndex = 5;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(3, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(97, 23);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Load Ciphertext";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.loadCipherText);
             // 
             // tableLayoutPanel1
             // 
@@ -240,6 +251,7 @@
             this.comboBoxA.Name = "comboBoxA";
             this.comboBoxA.Size = new System.Drawing.Size(34, 21);
             this.comboBoxA.TabIndex = 0;
+            this.comboBoxA.SelectedIndexChanged += new System.EventHandler(this.recalculate);
             // 
             // comboBoxB
             // 
@@ -249,6 +261,7 @@
             this.comboBoxB.Name = "comboBoxB";
             this.comboBoxB.Size = new System.Drawing.Size(34, 21);
             this.comboBoxB.TabIndex = 1;
+            this.comboBoxB.SelectedIndexChanged += new System.EventHandler(this.recalculate);
             // 
             // comboBoxC
             // 
@@ -258,6 +271,7 @@
             this.comboBoxC.Name = "comboBoxC";
             this.comboBoxC.Size = new System.Drawing.Size(34, 21);
             this.comboBoxC.TabIndex = 2;
+            this.comboBoxC.SelectedIndexChanged += new System.EventHandler(this.recalculate);
             // 
             // comboBoxD
             // 
@@ -267,6 +281,7 @@
             this.comboBoxD.Name = "comboBoxD";
             this.comboBoxD.Size = new System.Drawing.Size(34, 21);
             this.comboBoxD.TabIndex = 3;
+            this.comboBoxD.SelectedIndexChanged += new System.EventHandler(this.recalculate);
             // 
             // comboBoxE
             // 
@@ -276,6 +291,7 @@
             this.comboBoxE.Name = "comboBoxE";
             this.comboBoxE.Size = new System.Drawing.Size(34, 21);
             this.comboBoxE.TabIndex = 4;
+            this.comboBoxE.SelectedIndexChanged += new System.EventHandler(this.recalculate);
             // 
             // comboBoxF
             // 
@@ -285,6 +301,7 @@
             this.comboBoxF.Name = "comboBoxF";
             this.comboBoxF.Size = new System.Drawing.Size(34, 21);
             this.comboBoxF.TabIndex = 5;
+            this.comboBoxF.SelectedIndexChanged += new System.EventHandler(this.recalculate);
             // 
             // comboBoxG
             // 
@@ -294,6 +311,7 @@
             this.comboBoxG.Name = "comboBoxG";
             this.comboBoxG.Size = new System.Drawing.Size(34, 21);
             this.comboBoxG.TabIndex = 6;
+            this.comboBoxG.SelectedIndexChanged += new System.EventHandler(this.recalculate);
             // 
             // comboBoxH
             // 
@@ -303,6 +321,7 @@
             this.comboBoxH.Name = "comboBoxH";
             this.comboBoxH.Size = new System.Drawing.Size(34, 21);
             this.comboBoxH.TabIndex = 7;
+            this.comboBoxH.SelectedIndexChanged += new System.EventHandler(this.recalculate);
             // 
             // comboBoxI
             // 
@@ -312,6 +331,7 @@
             this.comboBoxI.Name = "comboBoxI";
             this.comboBoxI.Size = new System.Drawing.Size(34, 21);
             this.comboBoxI.TabIndex = 8;
+            this.comboBoxI.SelectedIndexChanged += new System.EventHandler(this.recalculate);
             // 
             // comboBoxJ
             // 
@@ -321,6 +341,7 @@
             this.comboBoxJ.Name = "comboBoxJ";
             this.comboBoxJ.Size = new System.Drawing.Size(34, 21);
             this.comboBoxJ.TabIndex = 9;
+            this.comboBoxJ.SelectedIndexChanged += new System.EventHandler(this.recalculate);
             // 
             // comboBoxK
             // 
@@ -330,6 +351,7 @@
             this.comboBoxK.Name = "comboBoxK";
             this.comboBoxK.Size = new System.Drawing.Size(34, 21);
             this.comboBoxK.TabIndex = 10;
+            this.comboBoxK.SelectedIndexChanged += new System.EventHandler(this.recalculate);
             // 
             // comboBoxL
             // 
@@ -339,6 +361,7 @@
             this.comboBoxL.Name = "comboBoxL";
             this.comboBoxL.Size = new System.Drawing.Size(34, 21);
             this.comboBoxL.TabIndex = 11;
+            this.comboBoxL.SelectedIndexChanged += new System.EventHandler(this.recalculate);
             // 
             // comboBoxM
             // 
@@ -348,6 +371,7 @@
             this.comboBoxM.Name = "comboBoxM";
             this.comboBoxM.Size = new System.Drawing.Size(34, 21);
             this.comboBoxM.TabIndex = 12;
+            this.comboBoxM.SelectedIndexChanged += new System.EventHandler(this.recalculate);
             // 
             // comboBoxN
             // 
@@ -357,6 +381,7 @@
             this.comboBoxN.Name = "comboBoxN";
             this.comboBoxN.Size = new System.Drawing.Size(34, 21);
             this.comboBoxN.TabIndex = 13;
+            this.comboBoxN.SelectedIndexChanged += new System.EventHandler(this.recalculate);
             // 
             // comboBoxO
             // 
@@ -366,6 +391,7 @@
             this.comboBoxO.Name = "comboBoxO";
             this.comboBoxO.Size = new System.Drawing.Size(34, 21);
             this.comboBoxO.TabIndex = 14;
+            this.comboBoxO.SelectedIndexChanged += new System.EventHandler(this.recalculate);
             // 
             // comboBoxP
             // 
@@ -375,6 +401,7 @@
             this.comboBoxP.Name = "comboBoxP";
             this.comboBoxP.Size = new System.Drawing.Size(34, 21);
             this.comboBoxP.TabIndex = 15;
+            this.comboBoxP.SelectedIndexChanged += new System.EventHandler(this.recalculate);
             // 
             // comboBoxQ
             // 
@@ -384,6 +411,7 @@
             this.comboBoxQ.Name = "comboBoxQ";
             this.comboBoxQ.Size = new System.Drawing.Size(34, 21);
             this.comboBoxQ.TabIndex = 16;
+            this.comboBoxQ.SelectedIndexChanged += new System.EventHandler(this.recalculate);
             // 
             // comboBoxR
             // 
@@ -393,6 +421,7 @@
             this.comboBoxR.Name = "comboBoxR";
             this.comboBoxR.Size = new System.Drawing.Size(34, 21);
             this.comboBoxR.TabIndex = 17;
+            this.comboBoxR.SelectedIndexChanged += new System.EventHandler(this.recalculate);
             // 
             // comboBoxS
             // 
@@ -402,6 +431,7 @@
             this.comboBoxS.Name = "comboBoxS";
             this.comboBoxS.Size = new System.Drawing.Size(34, 21);
             this.comboBoxS.TabIndex = 18;
+            this.comboBoxS.SelectedIndexChanged += new System.EventHandler(this.recalculate);
             // 
             // comboBoxT
             // 
@@ -411,6 +441,7 @@
             this.comboBoxT.Name = "comboBoxT";
             this.comboBoxT.Size = new System.Drawing.Size(34, 21);
             this.comboBoxT.TabIndex = 19;
+            this.comboBoxT.SelectedIndexChanged += new System.EventHandler(this.recalculate);
             // 
             // comboBoxU
             // 
@@ -420,6 +451,7 @@
             this.comboBoxU.Name = "comboBoxU";
             this.comboBoxU.Size = new System.Drawing.Size(34, 21);
             this.comboBoxU.TabIndex = 20;
+            this.comboBoxU.SelectedIndexChanged += new System.EventHandler(this.recalculate);
             // 
             // comboBoxV
             // 
@@ -429,6 +461,7 @@
             this.comboBoxV.Name = "comboBoxV";
             this.comboBoxV.Size = new System.Drawing.Size(34, 21);
             this.comboBoxV.TabIndex = 21;
+            this.comboBoxV.SelectedIndexChanged += new System.EventHandler(this.recalculate);
             // 
             // comboBoxW
             // 
@@ -438,6 +471,7 @@
             this.comboBoxW.Name = "comboBoxW";
             this.comboBoxW.Size = new System.Drawing.Size(34, 21);
             this.comboBoxW.TabIndex = 22;
+            this.comboBoxW.SelectedIndexChanged += new System.EventHandler(this.recalculate);
             // 
             // comboBoxX
             // 
@@ -447,6 +481,7 @@
             this.comboBoxX.Name = "comboBoxX";
             this.comboBoxX.Size = new System.Drawing.Size(34, 21);
             this.comboBoxX.TabIndex = 23;
+            this.comboBoxX.SelectedIndexChanged += new System.EventHandler(this.recalculate);
             // 
             // comboBoxY
             // 
@@ -456,6 +491,7 @@
             this.comboBoxY.Name = "comboBoxY";
             this.comboBoxY.Size = new System.Drawing.Size(34, 21);
             this.comboBoxY.TabIndex = 24;
+            this.comboBoxY.SelectedIndexChanged += new System.EventHandler(this.recalculate);
             // 
             // comboBoxZ
             // 
@@ -465,6 +501,7 @@
             this.comboBoxZ.Name = "comboBoxZ";
             this.comboBoxZ.Size = new System.Drawing.Size(34, 21);
             this.comboBoxZ.TabIndex = 25;
+            this.comboBoxZ.SelectedIndexChanged += new System.EventHandler(this.recalculate);
             // 
             // label1
             // 
@@ -702,7 +739,7 @@
             // 
             // splitContainer1
             // 
-            this.splitContainer1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.splitContainer1.BackColor = System.Drawing.Color.SteelBlue;
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 99);
             this.splitContainer1.Name = "splitContainer1";
@@ -718,13 +755,13 @@
             this.splitContainer1.Panel2.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.splitContainer1.Panel2.Controls.Add(this.button1);
             this.splitContainer1.Panel2.Controls.Add(this.chart1);
-            this.splitContainer1.Size = new System.Drawing.Size(632, 343);
-            this.splitContainer1.SplitterDistance = 218;
+            this.splitContainer1.Size = new System.Drawing.Size(1046, 410);
+            this.splitContainer1.SplitterDistance = 308;
             this.splitContainer1.TabIndex = 6;
             // 
             // splitContainer2
             // 
-            this.splitContainer2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.splitContainer2.BackColor = System.Drawing.Color.SteelBlue;
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer2.Location = new System.Drawing.Point(0, 0);
             this.splitContainer2.Name = "splitContainer2";
@@ -736,8 +773,8 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.textBox2);
-            this.splitContainer2.Size = new System.Drawing.Size(632, 218);
-            this.splitContainer2.SplitterDistance = 313;
+            this.splitContainer2.Size = new System.Drawing.Size(1046, 308);
+            this.splitContainer2.SplitterDistance = 518;
             this.splitContainer2.TabIndex = 0;
             // 
             // textBox1
@@ -746,7 +783,8 @@
             this.textBox1.Location = new System.Drawing.Point(0, 0);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(313, 218);
+            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox1.Size = new System.Drawing.Size(518, 308);
             this.textBox1.TabIndex = 0;
             // 
             // textBox2
@@ -755,53 +793,51 @@
             this.textBox2.Location = new System.Drawing.Point(0, 0);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(315, 218);
+            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox2.Size = new System.Drawing.Size(524, 308);
             this.textBox2.TabIndex = 1;
             // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(545, 86);
+            this.button1.Location = new System.Drawing.Point(959, 63);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 8;
             this.button1.Text = "Calibrate";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.calibrateStats);
             // 
             // chart1
             // 
-            this.chart1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
+            this.chart1.BackColor = System.Drawing.Color.SteelBlue;
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
             this.chart1.Location = new System.Drawing.Point(0, 0);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
             this.chart1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series2";
-            this.chart1.Series.Add(series1);
-            this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(632, 121);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Plain Text";
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Cipher Text";
+            this.chart1.Series.Add(series3);
+            this.chart1.Series.Add(series4);
+            this.chart1.Size = new System.Drawing.Size(1046, 98);
             this.chart1.TabIndex = 4;
             this.chart1.Text = "chart1";
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.calibrateStatisticsToolStripMenuItem,
             this.loadCiphertextToolStripMenuItem,
+            this.saveDecipheredAsToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
@@ -810,54 +846,47 @@
             // calibrateStatisticsToolStripMenuItem
             // 
             this.calibrateStatisticsToolStripMenuItem.Name = "calibrateStatisticsToolStripMenuItem";
-            this.calibrateStatisticsToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.calibrateStatisticsToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.calibrateStatisticsToolStripMenuItem.Text = "Calibrate Statistics";
-            this.calibrateStatisticsToolStripMenuItem.Click += new System.EventHandler(this.calibrateStatisticsToolStripMenuItem_Click);
+            this.calibrateStatisticsToolStripMenuItem.Click += new System.EventHandler(this.calibrateStats);
             // 
             // loadCiphertextToolStripMenuItem
             // 
             this.loadCiphertextToolStripMenuItem.Name = "loadCiphertextToolStripMenuItem";
-            this.loadCiphertextToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.loadCiphertextToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.loadCiphertextToolStripMenuItem.Text = "Load Ciphertext";
+            this.loadCiphertextToolStripMenuItem.Click += new System.EventHandler(this.loadCipherText);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.helpToolStripMenuItem});
+            this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(632, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1046, 24);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // helpToolStripMenuItem
+            // saveDecipheredAsToolStripMenuItem
             // 
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.helpToolStripMenuItem.Text = "Help";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(3, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(97, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Load Ciphertext";
-            this.button2.UseVisualStyleBackColor = true;
+            this.saveDecipheredAsToolStripMenuItem.Name = "saveDecipheredAsToolStripMenuItem";
+            this.saveDecipheredAsToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.saveDecipheredAsToolStripMenuItem.Text = "Save Deciphered As...";
+            this.saveDecipheredAsToolStripMenuItem.Click += new System.EventHandler(this.saveDecipheredAsToolStripMenuItem_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(632, 442);
+            this.ClientSize = new System.Drawing.Size(1046, 509);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
@@ -957,7 +986,8 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveDecipheredAsToolStripMenuItem;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 

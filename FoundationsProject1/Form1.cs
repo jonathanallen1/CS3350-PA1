@@ -8,11 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace FoundationsProject1
 {
     public partial class Form1 : Form
     {
+        private const int ALPHABET_SIZE = 26;
+
         private ComboBox[] selectors;
         private char[] uppers = new char[] 
         {
@@ -25,6 +28,14 @@ namespace FoundationsProject1
             'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
         };
 
+        private string contentOfCipher = "";
+        private string contentOfText = "";
+        private string decipheredText = "";
+        private Dictionary<char, int> countsOfCipher;
+        private Dictionary<char, int> countsOfPlain;
+        private Dictionary<char, double> countsOfCipherDouble;
+        private Dictionary<char, double> countsOfPlainDouble;
+
         public Form1()
         {
             InitializeComponent();
@@ -32,6 +43,8 @@ namespace FoundationsProject1
             // initialize the file selection dialog boxes
             openFileDialog1.Multiselect = false;
             openFileDialog1.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+
+            saveFileDialog1.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
 
             this.selectors = new ComboBox[] 
             {
@@ -50,78 +63,54 @@ namespace FoundationsProject1
                     box.Items.Add(letter);
                 }
             }
+
+            for (int index = 0; index < ALPHABET_SIZE; index++)
+            {
+                selectors[index].SelectedIndex = index;
+            }
+
+            // Initialize Cipher Count
+            countsOfCipher = new Dictionary<char, int>();
+            countsOfCipherDouble = new Dictionary<char, double>();
+            foreach (char c in lowers)
+            {
+                countsOfCipher.Add(c, 0);
+                countsOfCipherDouble.Add(c, 0);
+            }
+
+            // Initialize Calibration Count
+            countsOfPlain = new Dictionary<char, int>();
+            countsOfPlainDouble = new Dictionary<char, double>();
+            foreach (char c in lowers)
+            {
+                countsOfPlain.Add(c, 0);
+                countsOfPlainDouble.Add(c, 0);
+            }
+
+            chart1.ChartAreas[0].AxisX.Interval = 1;
+            chart1.ChartAreas[0].AxisY.LabelStyle.Format = "#%";
+            drawChart();
         }
 
         private void generate_Click(object sender, EventArgs e)
         {
+            // Load Stat Values
+            // Fill Dropdowns with guesses
+            // Recalculate
             generateGuess();
 
         }
 
         private void generateGuess()
         {
-            //get the data from the input fields
-            //NOTE: THESE NEED TO CHANGE TO MATCH YOUR SETUP 
-            //      IF YOU WANT TO TEST THIS
-            string cipherPath = "C:\\Users\\Jonathan\\SkyDrive\\8 Spring 2014\\Foundations of Computer Security\\CS3350-PA1\\cipher.txt";
-            string plainText = "C:\\Users\\Jonathan\\SkyDrive\\8 Spring 2014\\Foundations of Computer Security\\CS3350-PA1\\plaintext.txt";
-            //Get the characters from the file
-            string contentOfCipher = File.ReadAllText(cipherPath);
-            string contentOfText = File.ReadAllText(plainText);
-            //create a Dictionary for each file
-            Dictionary<char, int> countsOfCipher = new Dictionary<char, int>();
-            Dictionary<char, int> countsOfPlain = new Dictionary<char, int>();
-            //get the counts for the ciphertext
-            for (int i = 0; i < contentOfCipher.Length; ++i)
-            {
-                char c = contentOfCipher[i];
-                if (c != '\n' && c != ' ' && c != '\t' && c != '\r')
-                {
-                    if (countsOfCipher.ContainsKey(c))
-                    {
-                        countsOfCipher[c]++;
-                    }
-                    else
-                    {
-                        countsOfCipher.Add(c, 1);
-                    }
-                }
-            }
-            //get the counts for the plain text (calibration text)
-            for (int i = 0; i < contentOfText.Length; ++i)
-            {
-                char c = Char.ToLower(contentOfText[i]);
-                if (c != '\n' && c != ' ' && c != '\t' && c != '\r')
-                {
-                    if (countsOfPlain.ContainsKey(c))
-                    {
-                        countsOfPlain[c]++;
-                    }
-                    else
-                    {
-                        countsOfPlain.Add(c, 1);
-                    }
-                }
-            }
-
+            
             //This is used to organize each set by frequency
             var freqInCipher = from pair in countsOfCipher
-                        orderby pair.Value ascending
-                        select pair;
+                               orderby pair.Value ascending
+                               select pair;
             var freqInPlain = from pair2 in countsOfPlain
-                               orderby pair2.Value ascending
-                               select pair2;
-
-            //below is print our for checking letters
-            /*foreach (KeyValuePair<char, int> kvp in freqInCipher)
-            {
-                Console.WriteLine("{0}:{1}", kvp.Key, kvp.Value);
-            }
-            foreach (KeyValuePair<char, int> kvp2 in freqInPlain)
-            {
-                Console.WriteLine("{0}:{1}", kvp2.Key, kvp2.Value);
-            }*/
-
+                              orderby pair2.Value ascending
+                              select pair2;
 
             //the below code is used to map the characters to the characters
             Dictionary<char, char> charMap = new Dictionary<char, char>();
@@ -132,37 +121,13 @@ namespace FoundationsProject1
                 charMap.Add(cip, pla);
             }
 
-            //printout of mapping
-            foreach (KeyValuePair<char, char> kvp in charMap)
+            for (int index = 0; index < ALPHABET_SIZE; index++)
             {
-                Console.WriteLine("{0}:{1}", kvp.Key, kvp.Value);
+                char c = lowers[index];
+                selectors[index].SelectedIndex = charMap[c] - 'a';
             }
 
-            //below changes the cipher to our best guess, it writes the guess to file
-            //it will need to be changed, note that we should delete deciphered.txt after
-            //each run. It can be found in the project folder -> FoundationsProject1 -> bin -> debug
-            if ((!File.Exists("deciphered.txt")))
-            {
-                using (FileStream fs = File.Create("deciphered.txt"))
-                {
-
-                    byte[] toWrite = new byte[contentOfCipher.Length];
-                    for (int i = 0; i < contentOfCipher.Length; ++i)
-                    {
-                        char c = contentOfCipher[i];
-                        if (charMap.ContainsKey(c))
-                        {
-                            toWrite[i] = (byte) charMap[c];
-                        }
-                        else
-                        {
-                            toWrite[i] = (byte)c;
-                        }
-                    }
-                    fs.Write(toWrite, 0, toWrite.Length);
-                    fs.Close();
-                }
-            }
+            recalculate(null, null);
         }
 
         // Exit the program using the exit option in the file menu
@@ -171,24 +136,152 @@ namespace FoundationsProject1
             this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            calibrateStats();
-        }
-
-        private void calibrateStatisticsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.calibrateStats();
-        }
-
-        private void calibrateStats()
+        private void calibrateStats(object sender, EventArgs e)
         {
             DialogResult result = this.openFileDialog1.ShowDialog();
-            
+            string calibrationFile;
+
             if (result == DialogResult.OK)
             {
-                textBox1.Text = openFileDialog1.FileName;
+                calibrationFile = openFileDialog1.FileName;
             }
+            else
+            {
+                return;
+            }
+
+            contentOfText = File.ReadAllText(calibrationFile);
+
+            // Reset the plaintext statistics to 0 in case this is not the first calibration
+            foreach (char c in lowers)
+            {
+                countsOfPlain[c] = 0;
+            }
+
+            //get the counts for the plain text (calibration text)
+            foreach (char letter in contentOfText)
+            {
+                char c = Char.ToLower(letter);
+                if (c >= 'a' && c <= 'z')
+                {
+                    countsOfPlain[c]++;
+                }
+            }
+
+            foreach (char letter in lowers)
+            {
+                countsOfPlainDouble[letter] = (double) countsOfPlain[letter] / (double) contentOfText.Length;
+            }
+
+            // Redraw Chart
+            drawChart();
+        }
+
+        private void recalculate(object sender, EventArgs e)
+        {
+            string output = "";
+            foreach (char c in contentOfCipher)
+            {
+                char letter = Char.ToLower(c);
+                if (letter >= 'a' && letter <= 'z')
+                {
+                    int index = letter - 'a';
+                    output += lowers[selectors[index].SelectedIndex];
+                }
+                else
+                {
+                    output += c;
+                }
+            }
+
+            textBox2.Text = output;
+            decipheredText = output;
+        }
+
+        private void drawChart()
+        {
+            chart1.Series["Plain Text"].Points.Clear();
+            chart1.Series["Cipher Text"].Points.Clear();
+
+            for (int index = 0; index < ALPHABET_SIZE; index++)
+            {
+                // Calibration Data
+                double value = countsOfPlainDouble.ElementAt(index).Value;
+                string key = countsOfPlainDouble.ElementAt(index).Key.ToString();
+
+                DataPoint data = new DataPoint(index, value);
+                data.AxisLabel = key;
+                chart1.Series["Plain Text"].Points.Add(data);
+
+                // Cipher Data
+                value = countsOfCipherDouble.ElementAt(index).Value;
+
+                data = new DataPoint(index, value);
+                data.AxisLabel = key;
+                chart1.Series["Cipher Text"].Points.Add(data);
+            }
+        }
+
+        private void loadCipherText(object sender, EventArgs e)
+        {
+            DialogResult result = this.openFileDialog1.ShowDialog();
+            string cipherFile;
+
+            if (result == DialogResult.OK)
+            {
+                cipherFile = openFileDialog1.FileName;
+            }
+            else
+            {
+                return;
+            }
+
+            contentOfCipher = File.ReadAllText(cipherFile);
+            textBox1.Text = contentOfCipher;
+
+            // Reset the ciphertext statistics to 0 in case this is not the first file loaded
+            foreach (char c in lowers)
+            {
+                countsOfCipher[c] = 0;
+            }
+
+            //get the counts for the cipher text
+            foreach (char letter in contentOfCipher)
+            {
+                char c = Char.ToLower(letter);
+                if (c >= 'a' && c <= 'z')
+                {
+                    countsOfCipher[c]++;
+                }
+            }
+
+            foreach (char letter in lowers)
+            {
+                countsOfCipherDouble[letter] = (double) countsOfCipher[letter] / (double) contentOfCipher.Length;
+            }
+
+            // Redraw Chart
+            drawChart();
+        }
+
+        private void saveDecipheredAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult result = this.saveFileDialog1.ShowDialog();
+            string decipherFile;
+
+            if (result == DialogResult.OK)
+            {
+                decipherFile = saveFileDialog1.FileName;
+            }
+            else
+            {
+                return;
+            }
+
+            System.IO.StreamWriter file = new System.IO.StreamWriter(decipherFile);
+            file.Write(decipheredText);
+
+            file.Close();
         }
     }
 }
