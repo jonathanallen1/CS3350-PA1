@@ -10,7 +10,9 @@
  * School:  Cedarville University
  * 
  * Summary of Modifications:
- *  - 2/2/14 JFA Project successfully working, commented, and ready to turn in.
+ *  - 02/02/14 JFA Project successfully working, commented, and ready to turn in.
+ *  - 02/03/14 JFA Added ability to type or paste cipher text directly into cipher
+ *                 textbox instead of requiring the user to load a file.
  *  
  * Project Requirements:
  *  - Develop a tool for a cryptanalyst to use to decode a substitution cipher.
@@ -166,6 +168,27 @@ namespace FoundationsProject1
             contentOfCipher = File.ReadAllText(cipherFile);
             textBox1.Text = contentOfCipher;
 
+            analyzeCipherText();
+        }
+
+        /// <summary>
+        /// Adjust cipher message when the contents of the cipher text box are changed manually
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <remarks>
+        /// This allows us to paste or type the cipher message in instead of having to load a file.
+        /// </remarks>
+        private void CipherTextBoxChanged(object sender, EventArgs e)
+        {
+            contentOfCipher = textBox1.Text;
+            analyzeCipherText();
+        }
+
+        /// <summary>
+        /// Recount the occurences of letters in the cipher text and try to decipher.
+        /// </summary>
+        private void analyzeCipherText() {
             // Reset the ciphertext statistics to 0 in case this is not the first file loaded
             foreach (char letter in alphabet)
             {
