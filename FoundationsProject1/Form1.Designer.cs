@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.generate_guess = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -99,9 +99,9 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.calibrateStatisticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loadCiphertextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveDecipheredAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.saveDecipheredAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -251,7 +251,7 @@
             this.comboBoxA.Name = "comboBoxA";
             this.comboBoxA.Size = new System.Drawing.Size(34, 21);
             this.comboBoxA.TabIndex = 0;
-            this.comboBoxA.SelectedIndexChanged += new System.EventHandler(this.recalculate);
+            this.comboBoxA.SelectedIndexChanged += new System.EventHandler(this.valueChanged);
             // 
             // comboBoxB
             // 
@@ -261,7 +261,7 @@
             this.comboBoxB.Name = "comboBoxB";
             this.comboBoxB.Size = new System.Drawing.Size(34, 21);
             this.comboBoxB.TabIndex = 1;
-            this.comboBoxB.SelectedIndexChanged += new System.EventHandler(this.recalculate);
+            this.comboBoxB.SelectedIndexChanged += new System.EventHandler(this.valueChanged);
             // 
             // comboBoxC
             // 
@@ -271,7 +271,7 @@
             this.comboBoxC.Name = "comboBoxC";
             this.comboBoxC.Size = new System.Drawing.Size(34, 21);
             this.comboBoxC.TabIndex = 2;
-            this.comboBoxC.SelectedIndexChanged += new System.EventHandler(this.recalculate);
+            this.comboBoxC.SelectedIndexChanged += new System.EventHandler(this.valueChanged);
             // 
             // comboBoxD
             // 
@@ -281,7 +281,7 @@
             this.comboBoxD.Name = "comboBoxD";
             this.comboBoxD.Size = new System.Drawing.Size(34, 21);
             this.comboBoxD.TabIndex = 3;
-            this.comboBoxD.SelectedIndexChanged += new System.EventHandler(this.recalculate);
+            this.comboBoxD.SelectedIndexChanged += new System.EventHandler(this.valueChanged);
             // 
             // comboBoxE
             // 
@@ -291,7 +291,7 @@
             this.comboBoxE.Name = "comboBoxE";
             this.comboBoxE.Size = new System.Drawing.Size(34, 21);
             this.comboBoxE.TabIndex = 4;
-            this.comboBoxE.SelectedIndexChanged += new System.EventHandler(this.recalculate);
+            this.comboBoxE.SelectedIndexChanged += new System.EventHandler(this.valueChanged);
             // 
             // comboBoxF
             // 
@@ -301,7 +301,7 @@
             this.comboBoxF.Name = "comboBoxF";
             this.comboBoxF.Size = new System.Drawing.Size(34, 21);
             this.comboBoxF.TabIndex = 5;
-            this.comboBoxF.SelectedIndexChanged += new System.EventHandler(this.recalculate);
+            this.comboBoxF.SelectedIndexChanged += new System.EventHandler(this.valueChanged);
             // 
             // comboBoxG
             // 
@@ -311,7 +311,7 @@
             this.comboBoxG.Name = "comboBoxG";
             this.comboBoxG.Size = new System.Drawing.Size(34, 21);
             this.comboBoxG.TabIndex = 6;
-            this.comboBoxG.SelectedIndexChanged += new System.EventHandler(this.recalculate);
+            this.comboBoxG.SelectedIndexChanged += new System.EventHandler(this.valueChanged);
             // 
             // comboBoxH
             // 
@@ -321,7 +321,7 @@
             this.comboBoxH.Name = "comboBoxH";
             this.comboBoxH.Size = new System.Drawing.Size(34, 21);
             this.comboBoxH.TabIndex = 7;
-            this.comboBoxH.SelectedIndexChanged += new System.EventHandler(this.recalculate);
+            this.comboBoxH.SelectedIndexChanged += new System.EventHandler(this.valueChanged);
             // 
             // comboBoxI
             // 
@@ -331,7 +331,7 @@
             this.comboBoxI.Name = "comboBoxI";
             this.comboBoxI.Size = new System.Drawing.Size(34, 21);
             this.comboBoxI.TabIndex = 8;
-            this.comboBoxI.SelectedIndexChanged += new System.EventHandler(this.recalculate);
+            this.comboBoxI.SelectedIndexChanged += new System.EventHandler(this.valueChanged);
             // 
             // comboBoxJ
             // 
@@ -341,7 +341,7 @@
             this.comboBoxJ.Name = "comboBoxJ";
             this.comboBoxJ.Size = new System.Drawing.Size(34, 21);
             this.comboBoxJ.TabIndex = 9;
-            this.comboBoxJ.SelectedIndexChanged += new System.EventHandler(this.recalculate);
+            this.comboBoxJ.SelectedIndexChanged += new System.EventHandler(this.valueChanged);
             // 
             // comboBoxK
             // 
@@ -351,7 +351,7 @@
             this.comboBoxK.Name = "comboBoxK";
             this.comboBoxK.Size = new System.Drawing.Size(34, 21);
             this.comboBoxK.TabIndex = 10;
-            this.comboBoxK.SelectedIndexChanged += new System.EventHandler(this.recalculate);
+            this.comboBoxK.SelectedIndexChanged += new System.EventHandler(this.valueChanged);
             // 
             // comboBoxL
             // 
@@ -361,7 +361,7 @@
             this.comboBoxL.Name = "comboBoxL";
             this.comboBoxL.Size = new System.Drawing.Size(34, 21);
             this.comboBoxL.TabIndex = 11;
-            this.comboBoxL.SelectedIndexChanged += new System.EventHandler(this.recalculate);
+            this.comboBoxL.SelectedIndexChanged += new System.EventHandler(this.valueChanged);
             // 
             // comboBoxM
             // 
@@ -371,7 +371,7 @@
             this.comboBoxM.Name = "comboBoxM";
             this.comboBoxM.Size = new System.Drawing.Size(34, 21);
             this.comboBoxM.TabIndex = 12;
-            this.comboBoxM.SelectedIndexChanged += new System.EventHandler(this.recalculate);
+            this.comboBoxM.SelectedIndexChanged += new System.EventHandler(this.valueChanged);
             // 
             // comboBoxN
             // 
@@ -381,7 +381,7 @@
             this.comboBoxN.Name = "comboBoxN";
             this.comboBoxN.Size = new System.Drawing.Size(34, 21);
             this.comboBoxN.TabIndex = 13;
-            this.comboBoxN.SelectedIndexChanged += new System.EventHandler(this.recalculate);
+            this.comboBoxN.SelectedIndexChanged += new System.EventHandler(this.valueChanged);
             // 
             // comboBoxO
             // 
@@ -391,7 +391,7 @@
             this.comboBoxO.Name = "comboBoxO";
             this.comboBoxO.Size = new System.Drawing.Size(34, 21);
             this.comboBoxO.TabIndex = 14;
-            this.comboBoxO.SelectedIndexChanged += new System.EventHandler(this.recalculate);
+            this.comboBoxO.SelectedIndexChanged += new System.EventHandler(this.valueChanged);
             // 
             // comboBoxP
             // 
@@ -401,7 +401,7 @@
             this.comboBoxP.Name = "comboBoxP";
             this.comboBoxP.Size = new System.Drawing.Size(34, 21);
             this.comboBoxP.TabIndex = 15;
-            this.comboBoxP.SelectedIndexChanged += new System.EventHandler(this.recalculate);
+            this.comboBoxP.SelectedIndexChanged += new System.EventHandler(this.valueChanged);
             // 
             // comboBoxQ
             // 
@@ -411,7 +411,7 @@
             this.comboBoxQ.Name = "comboBoxQ";
             this.comboBoxQ.Size = new System.Drawing.Size(34, 21);
             this.comboBoxQ.TabIndex = 16;
-            this.comboBoxQ.SelectedIndexChanged += new System.EventHandler(this.recalculate);
+            this.comboBoxQ.SelectedIndexChanged += new System.EventHandler(this.valueChanged);
             // 
             // comboBoxR
             // 
@@ -421,7 +421,7 @@
             this.comboBoxR.Name = "comboBoxR";
             this.comboBoxR.Size = new System.Drawing.Size(34, 21);
             this.comboBoxR.TabIndex = 17;
-            this.comboBoxR.SelectedIndexChanged += new System.EventHandler(this.recalculate);
+            this.comboBoxR.SelectedIndexChanged += new System.EventHandler(this.valueChanged);
             // 
             // comboBoxS
             // 
@@ -431,7 +431,7 @@
             this.comboBoxS.Name = "comboBoxS";
             this.comboBoxS.Size = new System.Drawing.Size(34, 21);
             this.comboBoxS.TabIndex = 18;
-            this.comboBoxS.SelectedIndexChanged += new System.EventHandler(this.recalculate);
+            this.comboBoxS.SelectedIndexChanged += new System.EventHandler(this.valueChanged);
             // 
             // comboBoxT
             // 
@@ -441,7 +441,7 @@
             this.comboBoxT.Name = "comboBoxT";
             this.comboBoxT.Size = new System.Drawing.Size(34, 21);
             this.comboBoxT.TabIndex = 19;
-            this.comboBoxT.SelectedIndexChanged += new System.EventHandler(this.recalculate);
+            this.comboBoxT.SelectedIndexChanged += new System.EventHandler(this.valueChanged);
             // 
             // comboBoxU
             // 
@@ -451,7 +451,7 @@
             this.comboBoxU.Name = "comboBoxU";
             this.comboBoxU.Size = new System.Drawing.Size(34, 21);
             this.comboBoxU.TabIndex = 20;
-            this.comboBoxU.SelectedIndexChanged += new System.EventHandler(this.recalculate);
+            this.comboBoxU.SelectedIndexChanged += new System.EventHandler(this.valueChanged);
             // 
             // comboBoxV
             // 
@@ -461,7 +461,7 @@
             this.comboBoxV.Name = "comboBoxV";
             this.comboBoxV.Size = new System.Drawing.Size(34, 21);
             this.comboBoxV.TabIndex = 21;
-            this.comboBoxV.SelectedIndexChanged += new System.EventHandler(this.recalculate);
+            this.comboBoxV.SelectedIndexChanged += new System.EventHandler(this.valueChanged);
             // 
             // comboBoxW
             // 
@@ -471,7 +471,7 @@
             this.comboBoxW.Name = "comboBoxW";
             this.comboBoxW.Size = new System.Drawing.Size(34, 21);
             this.comboBoxW.TabIndex = 22;
-            this.comboBoxW.SelectedIndexChanged += new System.EventHandler(this.recalculate);
+            this.comboBoxW.SelectedIndexChanged += new System.EventHandler(this.valueChanged);
             // 
             // comboBoxX
             // 
@@ -481,7 +481,7 @@
             this.comboBoxX.Name = "comboBoxX";
             this.comboBoxX.Size = new System.Drawing.Size(34, 21);
             this.comboBoxX.TabIndex = 23;
-            this.comboBoxX.SelectedIndexChanged += new System.EventHandler(this.recalculate);
+            this.comboBoxX.SelectedIndexChanged += new System.EventHandler(this.valueChanged);
             // 
             // comboBoxY
             // 
@@ -491,7 +491,7 @@
             this.comboBoxY.Name = "comboBoxY";
             this.comboBoxY.Size = new System.Drawing.Size(34, 21);
             this.comboBoxY.TabIndex = 24;
-            this.comboBoxY.SelectedIndexChanged += new System.EventHandler(this.recalculate);
+            this.comboBoxY.SelectedIndexChanged += new System.EventHandler(this.valueChanged);
             // 
             // comboBoxZ
             // 
@@ -501,7 +501,7 @@
             this.comboBoxZ.Name = "comboBoxZ";
             this.comboBoxZ.Size = new System.Drawing.Size(34, 21);
             this.comboBoxZ.TabIndex = 25;
-            this.comboBoxZ.SelectedIndexChanged += new System.EventHandler(this.recalculate);
+            this.comboBoxZ.SelectedIndexChanged += new System.EventHandler(this.valueChanged);
             // 
             // label1
             // 
@@ -811,23 +811,23 @@
             // chart1
             // 
             this.chart1.BackColor = System.Drawing.Color.SteelBlue;
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(0, 0);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
             this.chart1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Plain Text";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Cipher Text";
-            this.chart1.Series.Add(series3);
-            this.chart1.Series.Add(series4);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Plain Text";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Cipher Text";
+            this.chart1.Series.Add(series1);
+            this.chart1.Series.Add(series2);
             this.chart1.Size = new System.Drawing.Size(1046, 98);
             this.chart1.TabIndex = 4;
             this.chart1.Text = "chart1";
@@ -857,6 +857,13 @@
             this.loadCiphertextToolStripMenuItem.Text = "Load Ciphertext";
             this.loadCiphertextToolStripMenuItem.Click += new System.EventHandler(this.loadCipherText);
             // 
+            // saveDecipheredAsToolStripMenuItem
+            // 
+            this.saveDecipheredAsToolStripMenuItem.Name = "saveDecipheredAsToolStripMenuItem";
+            this.saveDecipheredAsToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.saveDecipheredAsToolStripMenuItem.Text = "Save Deciphered As...";
+            this.saveDecipheredAsToolStripMenuItem.Click += new System.EventHandler(this.saveAs);
+            // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
@@ -874,13 +881,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(1046, 24);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // saveDecipheredAsToolStripMenuItem
-            // 
-            this.saveDecipheredAsToolStripMenuItem.Name = "saveDecipheredAsToolStripMenuItem";
-            this.saveDecipheredAsToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.saveDecipheredAsToolStripMenuItem.Text = "Save Deciphered As...";
-            this.saveDecipheredAsToolStripMenuItem.Click += new System.EventHandler(this.saveDecipheredAsToolStripMenuItem_Click);
             // 
             // Form1
             // 

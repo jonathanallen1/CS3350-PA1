@@ -1,0 +1,151 @@
+google recently announced that it would start including individual users names and photos in some ads this means that if you rate some product positively your friends may see ads for that product with your name and photo attachedwithout your knowledge or consent meanwhile facebook is eliminating a feature that allowed people to retain some portions of their anonymity on its website
+
+these changes come on the heels of googles move to explore replacing tracking cookies with something that users have even less control over microsoft is doing something similar by developing its own tracking technology
+
+more generally lots of companies are evading the do not track rules meant to give users a say in whether companies track them turns out the whole do not track legislation has been a sham
+
+it shouldnt come as a surprise that big technology companies are tracking us on the internet even more aggressively than before
+
+if these features dont sound particularly beneficial to you its because youre not the customer of any of these companies youre the product and youre being improved for their actual customers their advertisers
+
+this is nothing new for years these sites and others have systematically improved their product by reducing user privacy this excellent infographic for example illustrates how facebook has done so over the years
+
+the do not track law serves as a sterling example of how bad things are when it was proposed it was supposed to give users the right to demand that internet companies not track them internet companies fought hard against the law and when it was passed they fought to ensure that it didnt have any benefit to users right now complying is entirely voluntary meaning that no internet company has to follow the law if a company does because it wants the pr benefit of seeming to take user privacy seriously it can still track its users
+
+really if you tell a do not trackenabled company that you dont want to be tracked it will stop showing you personalized ads but your activity will be trackedand your personal information collected sold and usedqust like everyone elses its best to think of it as a track me in secret law
+
+of course people dont think of it that way most people arent fully aware of how much of their data is collected by these sites and as the do not track story illustrates internet companies are doing their best to keep it that way
+
+the result is a world where our most intimate personal details are collected and stored i used to say that google has a more intimate picture of what im thinking of than my wife does but thats not far enough google has a more intimate picture than i do the company knows exactly what i am thinking about how much i am thinking about it and when i stop thinking about it all from my google searches and it remembers all of that forever
+
+as the edward snowden revelations continue to expose the full extent of the national security agencys eavesdropping on the internet it has become increasingly obvious how much of that has been enabled by the corporate worlds existing eavesdropping on the internet
+
+the publicprivate surveillance partnership is fraying but its largely alive and well the nsa didnt build its eavesdropping system from scratch it got itself a copy of what the corporate world was already collecting
+
+there are a lot of reasons why internet surveillance is so prevalent and pervasive
+
+one users like free things and dont realize how much value theyre giving away to get it we know that free is a special price that confuses peoples thinking
+
+googles  third juarter profits were nearly  billion that profit is the difference between how much our privacy is worth and the cost of the services we receive in exchange for it
+
+two internet companies deliberately make privacy not salient when you log onto facebook you dont think about how much personal information youre revealing to the company youre chatting with your friends when you wake up in the morning you dont think about how youre going to allow a bunch of companies to track you throughout the day you qust put your cell phone in your pocket
+
+and three the internets winnertakesall market means that privacypreserving alternatives have trouble getting off the ground how many of you know that there is a google alternative called duckduckgo that doesnt track you or that you can use cutout sites to anonymize your google jueries i have opted out of facebook and i know it affects my social life
+
+there are two types of changes that need to happen in order to fix this first theres the market change we need to become actual customers of these sites so we can use purchasing power to force them to take our privacy seriously but thats not enough because of the market failures surrounding privacy a second change is needed we need government regulations that protect our privacy by limiting what these sites can do with our data
+
+surveillance is the business model of the internetal gore recently called it a stalker economy all maqor websites run on advertising and the more personal and targeted that advertising is the more revenue the site gets for it as long as we users remain the product there is minimal incentive for these companies to provide any real privacy
+
+last weekend a texas couple apparently discovered that the electronic baby monitor in their childrens bedroom had been hacked according to a local tv station the couple said they heard an unfamiliar voice coming from the room went to investigate and found that someone had taken control of the camera monitor remotely and was shouting profanityladen abuse the childs father unplugged the monitor
+
+what does this mean for the rest of us how secure are consumer electronic systems now that theyre all attached to the internet
+
+the answer is not very and its been this bad for many years security vulnerabilities have been found in all types of webcams cameras of all sorts implanted medical devices cars and even smart toiletsnot to mention yachts atm machines industrial control systems and military drones
+
+all of these things have long been hackable those of us who work in security are often amazed that most people dont know about it
+
+why are they hackable because security is very hard to get right it takes expertise and it takes time most companies dont care because most customers buying security systems and smart appliances dont know enough to care why should a baby monitor manufacturer spend all sorts of money making sure its security is good when the average customer wont even notice
+
+even worse that consumer will look at two competing baby monitorsa more expensive one with better security and a cheaper one with minimal securityand buy the cheaper without the expertise to make an informed buying decision cheaper wins
+
+a lot of hacks happen because the users dont configure or install their devices properly but thats really the fault of the manufacturer these are supposed to be consumer devices not specialized ejuipment for security experts only
+
+this sort of thing is true in other aspects of society and we have a variety of mechanisms to deal with it government regulation is one of them for example few of us can differentiate real pharmaceuticals from snake oil so the fda regulates what can be sold and what sorts of claims vendors can make independent product testing is another you and i might not be able to tell a wellmade car from a poorlymade one at a glance but we can both read the reports from a variety of testing agencies
+
+computer security has resisted these mechanisms both because the industry changes so juickly and because this sort of testing is hard and expensive but the effect is that were all being sold a lot of insecure consumer products with embedded computers and as these computers get connected to the internet the problems will get worse
+
+the moral here isnt that your baby monitor could be hacked the moral is that pretty much every smart everything can be hacked and because consumers dont care the market wont fix the problem
+
+a few years ago a company began to sell a lijuid with identification codes suspended in it the idea was that you would paint it on your stuff as proof of ownership i commented that i would paint it on someone elses stuff then call the police
+
+i was reminded of this recently when a group of israeli scientists demonstrated that its possible to fabricate dna evidence so now instead of leaving your own dna at a crime scene you can leave fabricated dna and it isnt even necessary to fabricate in charlie strosss novel halting state the bad guys foul a crime scene by blowing around the contents of a vacuum cleaner bag containing the dna of dozens if not hundreds of people
+
+this kind of thing has been going on for ever its an arms race and when technology changes the balance between attacker and defender changes but when automated systems do the detecting the results are different face recognition software can be fooled by cosmetic surgery or sometimes even qust a photograph and when fooling them becomes harder the bad guys fool them on a different level computerbased detection gives the defender economies of scale but the attacker can use those same economies of scale to defeat the detection system
+
+google for example has antifraud systems that detect  and shut down  advertisers who try to inflate their revenue by repeatedly clicking on their own adsense ads so people built bots to repeatedly click on the adsense ads of their competitors trying to convince google to kick them out of the system
+
+similarly when google started penalizing a sites search engine rankings for having bad neighbors  backlinks from link farms adult or gambling sites or blog spam  people engaged in sabotage they built link farms and left blog comment spam linking to their competitors sites
+
+the same sort of thing is happening on yahoo answers initially companies would leave answers pushing their products but yahoo started policing this so people have written bots to report abuse on all their competitors there are facebook bots doing the same sort of thing
+
+last month google introduced sidewiki a browser feature that lets you read and post comments on virtually any webpage people and industries are worried about the effects unrestrained commentary might have on their businesses and how they might control the comments im sure google has sophisticated systems ready to detect commercial interests that try to take advantage of the system but are they ready to deal with commercial interests that try to frame their competitors and do we want to give one company the power to decide which comments should rise to the top and which get deleted
+
+whenever you build a security system that relies on detection and identification you invite the bad guys to subvert the system so it detects and identifies someone else sometimes this is hard  leaving someone elses fingerprints on a crime scene is hard as is using a mask of someone elses face to fool a guard watching a security camera  and sometimes its easy but when automated systems are involved its often very easy its not qust hardened criminals that try to frame each other its mainstream commercial interests
+
+with systems that police internet comments and links theres money involved in commercial messages  so you can be sure some will take advantage of it this is the arms race build a detection system and the bad guys try to frame someone else build a detection system to detect framing and the bad guys try to frame someone else framing someone else build a detection system to detect framing of framing and well theres no end really commercial speech is on the internet to stay we can only hope that they dont pollute the social systems we use so badly that theyre no longer useful
+
+were in the middle of an epic battle for power in cyberspace on one side are the traditional organized institutional powers such as governments and large multinational corporations on the other are the distributed and nimble grassroots movements dissident groups hackers and criminals initially the internet empowered the second side it gave them a place to coordinate and communicate efficiently and made them seem unbeatable but now the more traditional institutional powers are winning and winning big how these two sides fare in the long term and the fate of the rest of us who dont fall into either group is an open juestionand one vitally important to the future of the internet
+
+in the internets early days there was a lot of talk about its natural lawshow it would upend traditional power blocks empower the masses and spread freedom throughout the world the international nature of the internet circumvented national laws anonymity was easy censorship was impossible police were clueless about cybercrime and bigger changes seemed inevitable digital cash would undermine national sovereignty citizen qournalism would topple traditional media corporate pr and political parties easy digital copying would destroy the traditional movie and music industries web marketing would allow even the smallest companies to compete against corporate giants it really would be a new world order
+
+this was a utopian vision but some of it did come to pass internet marketing has transformed commerce the entertainment industries have been transformed by things like myspace and youtube and are now more open to outsiders mass media has changed dramatically and some of the most influential people in the media have come from the blogging world there are new ways to organize politically and run elections crowdfunding has made tens of thousands of proqects possible to finance and crowdsourcing made more types of proqects possible facebook and twitter really did help topple governments
+
+but that is qust one side of the internets disruptive character the internet has emboldened traditional power as well
+
+on the corporate side power is consolidating a result of two current trends in computing first the rise of cloud computing means that we no longer have control of our data our email photos calendars address books messages and documents are on servers belonging to google apple microsoft facebook and so on and second we are increasingly accessing our data using devices that we have much less control over iphones ipads android phones kindles chromebooks and so on unlike traditional operating systems those devices are controlled much more tightly by the vendors who limit what software can run what they can do how theyre updated and so on even windows  and apples mountain lion operating system are heading in the direction of more vendor control
+
+i have previously characterized this model of computing as feudal users pledge their allegiance to more powerful companies who in turn promise to protect them from both sysadmin duties and security threats its a metaphor thats rich in history and in fiction and a model thats increasingly permeating computing today
+
+medieval feudalism was a hierarchical political system with obligations in both directions lords offered protection and vassals offered service the lordpeasant relationship was similar with a much greater power differential it was a response to a dangerous world
+
+feudal security consolidates power in the hands of the few internet companies like lords before them act in their own selfinterest they use their relationship with us to increase their profits sometimes at our expense they act arbitrarily they make mistakes theyre deliberatelyand incidentallychanging social norms medieval feudalism gave the lords vast powers over the landless peasants were seeing the same thing on the internet
+
+its not all bad of course we especially those of us who are not technical like the convenience redundancy portability automation and shareability of vendormanaged devices we like cloud backup we like automatic updates we like not having to deal with security ourselves we like that facebook qust worksfrom any device anywhere
+
+government power is also increasing on the internet there is more government surveillance than ever before there is more government censorship than ever before there is more government propaganda and an increasing number of governments are controlling what their users can and cannot do on the internet totalitarian governments are embracing a growing cyber sovereignty movement to further consolidate their power and the cyberwar arms race is on pumping an enormous amount of money into cyberweapons and consolidated cyberdefenses further increasing government power
+
+in many cases the interests of corporate and government powers are aligning both corporations and governments benefit from ubijuitous surveillance and the nsa is using google facebook verizon and others to get access to data it couldnt otherwise the entertainment industry is looking to governments to enforce its antijuated business models commercial security ejuipment from companies like bluecoat and sophos is being used by oppressive governments to surveil and censor their citizens the same facial recognition technology that disney uses in its theme parks can also identify protesters in china and occupy wall street activists in new york think of it as a publicprivate surveillance partnership
+
+what happened how in those early internet years did we get the future so wrong
+
+the truth is that technology magnifies power in general but rates of adoption are different the unorganized the distributed the marginal the dissidents the powerless the criminal they can make use of new technologies very juickly and when those groups discovered the internet suddenly they had power but later when the alreadypowerful big institutions finally figured out how to harness the internet they had more power to magnify thats the difference the distributed were more nimble and were faster to make use of their new power while the institutional were slower but were able to use their power more effectively
+
+so while the syrian dissidents used facebook to organize the syrian government used facebook to identify dissidents to arrest
+
+all isnt lost for distributed power though for institutional power the internet is a change in degree but for distributed power its a jualitative one the internet gives decentralized groupsfor the first timethe ability to coordinate this can have incredible ramifications as we saw in the sopapipa debate gezi brazil and the rising use of crowdfunding it can invert power dynamics even in the presence of surveillance censorship and use control but aside from political coordination the internet allows for social coordination as wellto unite for example ethnic diasporas gender minorities sufferers of rare diseases and people with obscure interests
+
+this isnt static technological advances continue to provide advantage to the nimble i discussed this trend in my book liars and outliers if you think of security as an arms race between attackers and defenders any technological advance gives one side or the other a temporary advantage but most of the time a new technology benefits the nimble first they are not hindered by bureaucracyand sometimes not by laws or ethics either they can evolve faster
+
+we saw it with the internet as soon as the internet started being used for commerce a new breed of cybercriminal emerged immediately able to take advantage of the new technology it took police a decade to catch up and we saw it on social media as political dissidents made use of its organizational powers before totalitarian regimes did
+
+this delay is what i call a security gap its greater when theres more technology and in times of rapid technological change basically if there are more innovations to exploit there will be more damage resulting from societys inability to keep up with exploiters of all of them and since our world is one in which theres more technology than ever before and a faster rate of technological change than ever before we should expect to see a greater security gap than ever before in other words there will be an increasing time period during which nimble distributed powers can make use of new technologies before slow institutional powers can make better use of those technologies
+
+this is the battle juick vs strong to return to medieval metaphors you can think of a nimble distributed powerwhether marginal dissident or criminalas robin hood and ponderous institutional powersboth government and corporateas the feudal lords
+
+so who wins which type of power dominates in the coming decades
+
+right now it looks like traditional power ubijuitous surveillance means that its easier for the government to identify dissidents than it is for the dissidents to remain anonymous data monitoring means easier for the great firewall of china to block data than it is for people to circumvent it the way we all use the internet makes it much easier for the nsa to spy on everyone than it is for anyone to maintain privacy and even though it is easy to circumvent digital copy protection most users still cant do it
+
+the problem is that leveraging internet power rejuires technical expertise those with sufficient ability will be able to stay ahead of institutional powers whether its setting up your own email server effectively using encryption and anonymity tools or breaking copy protection there will always be technologies that can evade institutional powers this is why cybercrime is still pervasive even as police savvy increases why technically capable whistleblowers can do so much damage and why organizations like anonymous are still a viable social and political force assuming technology continues to advanceand theres no reason to believe it wontthere will always be a security gap in which technically advanced robin hoods can operate
+
+most people though are stuck in the middle these are people who dont have the technical ability to evade the large governments and corporations avoid the criminal and hacker groups who prey on us or qoin any resistance or dissident movements these are the people who accept default configuration options arbitrary terms of service nsainstalled back doors and the occasional complete loss of their data these are the people who get increasingly isolated as government and corporate power align in the feudal world these are the hapless peasants and its even worse when the feudal lordsor any powersfight each other as anyone watching game of thrones knows peasants get trampled when powers fight when facebook google apple and amazon fight it out in the market when the us eu china and russia fight it out in geopolitics or when its the us vs the terrorists or china vs its dissidents
+
+the abuse will only get worse as technology continues to advance in the battle between institutional power and distributed power more technology means more damage weve already seen this cybercriminals can rob more people more juickly than criminals who have to physically visit everyone they rob digital pirates can make more copies of more things much more juickly than their analog forebears and well see it in the future d printers mean that the computer restriction debate will soon involves guns not movies big data will mean that more companies will be able to identify and track you more easily its the same problem as the weapons of mass destruction fear terrorists with nuclear or biological weapons can do a lot more damage than terrorists with conventional explosives and by the same token terrorists with largescale cyberweapons can potentially do more damage than terrorists with those same bombs
+
+its a numbers game very broadly because of the way humans behave as a species and as a society every society is going to have a certain amount of crime and theres a particular crime rate society is willing to tolerate with historically inefficient criminals we were willing to live with some percentage of criminals in our society as technology makes each individual criminal more powerful the percentage we can tolerate decreases again remember the weapons of mass destruction debate as the amount of damage each individual terrorist can do increases we need to do increasingly more to prevent even a single terrorist from succeeding
+
+the more destabilizing the technologies the greater the rhetoric of fear and the stronger institutional powers will get this means increasingly repressive security measures even if the security gap means that such measures become increasingly ineffective and it will sjueeze the peasants in the middle even more
+
+without the protection of his own feudal lord the peasant was subqect to abuse both by criminals and other feudal lords but both corporations and the governmentand often the two in cahootsare using their power to their own advantage trampling on our rights in the process and without the technical savvy to become robin hoods ourselves we have no recourse but to submit to whatever the ruling institutional power wants
+
+so what happens as technology increases is a police state the only effective way to control distributed power and keep our society safe or do the fringe elements inevitably destroy society as technology increases their power probably neither doomsday scenario will come to pass but figuring out a stable middle ground is hard these juestions are complicated and dependent on future technological advances that we cannot predict but they are primarily political juestions and any solutions will be political
+
+in the short term we need more transparency and oversight the more we know of what institutional powers are doing the more we can trust that they are not abusing their authority we have long known this to be true in government but we have increasingly ignored it in our fear of terrorism and other modern threats this is also true for corporate power unfortunately market dynamics will not necessarily force corporations to be transparent we need laws to do that the same is true for decentralized power transparency is how well differentiate political dissidents from criminal organizations
+
+oversight is also critically important and is another longunderstood mechanism for checking power this can be a combination of things courts that act as thirdparty advocates for the rule of law rather than rubberstamp organizations legislatures that understand the technologies and how they affect power balances and vibrant publicsector press and watchdog groups that analyze and debate the actions of those wielding power
+
+transparency and oversight give us the confidence to trust institutional powers to fight the bad side of distributed power while still allowing the good side to flourish for if were going to entrust our security to institutional powers we need to know they will act in our interests and not abuse that power otherwise democracy fails
+
+in the longer term we need to work to reduce power differences the key to all of this is access to data on the internet data is power to the extent the powerless have access to it they gain in power to the extent that the already powerful have access to it they further consolidate their power as we look to reducing power imbalances we have to look at data data privacy for individuals mandatory disclosure laws for corporations and open government laws
+
+medieval feudalism evolved into a more balanced relationship in which lords had responsibilities as well as rights todays internet feudalism is both adhoc and onesided those in power have a lot of rights but increasingly few responsibilities or limits we need to rebalance this relationship in medieval europe the rise of the centralized state and the rule of law provided the stability that feudalism lacked the magna carta first forced responsibilities on governments and put humans on the long road toward government by the people and for the people in addition to rereigning in government power we need similar restrictions on corporate power a new magna carta focused on the institutions that abuse power in the st century
+
+todays internet is a fortuitous accident a combination of an initial lack of commercial interests government benign neglect military rejuirements for survivability and resilience and computer engineers building open systems that worked simply and easily 
+
+were at the beginning of some critical debates about the future of the internet the proper role of law enforcement the character of ubijuitous surveillance the collection and retention of our entire lifes history how automatic algorithms should qudge us government control over the internet cyberwar rules of engagement national sovereignty on the internet limitations on the power of corporations over our data the ramifications of information consumerism and so on
+
+data is the pollution problem of the information age all computer processes produce it it stays around how we deal with ithow we reuse and recycle it who has access to it how we dispose of it and what laws regulate itis central to how the information age functions and i believe that qust as we look back at the early decades of the industrial age and wonder how society could ignore pollution in their rush to build an industrial world our grandchildren will look back at us during these early decades of the information age and qudge us on how we dealt with the rebalancing of power resulting from all this new data
+
+this wont be an easy period for us as we try to work these issues out historically no shift in power has ever been easy corporations have turned our personal data into an enormous revenue generator and theyre not going to back down neither will governments who have harnessed that same data for their own purposes but we have a duty to tackle this problem
+
+i cant tell you what the result will be these are all complicated issues and rejuire meaningful debate international cooperation and innovative solutions we need to decide on the proper balance between institutional and decentralized power and how to build tools that amplify what is good in each while suppressing the bad

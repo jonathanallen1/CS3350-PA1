@@ -43,26 +43,17 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FoundationsProject1.exe" size="261632">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FoundationsProject1.exe" size="275968">
       <assemblyIdentity name="FoundationsProject1" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>msqLe/aj2ar97KU6OWuGt5iY5K8ZJuhm1qQbfbgAUjU=</dsig:DigestValue>
+        <dsig:DigestValue>M0q/Xfh6vG+vGKT9sDKhRzdlGF9o529c+W2nEH9QOV8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Evermor-Design-Galaxian-Lock.ico" size="410598">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>iAwCG5Tth72lqSOBmMsu9YdHJWxV5ddCJlpdFunnrrQ=</dsig:DigestValue>
-    </hash>
-  </file>
   <file name="FoundationsProject1.exe.config" size="187">
     <hash>
       <dsig:Transforms>
